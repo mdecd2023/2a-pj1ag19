@@ -6,7 +6,7 @@
 <p style="text-align: left; padding-left: 30px;">組別網頁:<a href="https://mdecd2023.github.io/2a-pj1ag19/content/index.html">https://mdecd2023.github.io/2a-pj1ag19/content/index.html</a></p>
 <h5 style="padding-left: 30px;"></h5>
 <h1>W3</h1>
-<h2>心得</h2>
+<p>心得</p>
 <p>w3</p>
 <p>41023101:因在創建群組時碰到github故障，倉儲在建立時遇到很多問題，後面github正常後有再創建一次，但組別倉儲被歸列到-1底下，後來詢問老師協助，倉儲已順利創建完成</p>
 <p>41023141:在一開始的時候github發生了問題，以至於我們在後面建立倉儲的時候屢屢碰壁，後面有老師協助，使我們倉儲成功建立。</p>
@@ -14,7 +14,8 @@
 <p><span>BubbleRub tutorial 製作結果與心得 presentation (以 Web-based 方式發表):</span></p>
 <p><a href="https://mdecd2023.github.io/2a-pj1ag19/content/Tutorial1.html">https://mdecd2023.github.io/2a-pj1ag19/content/Tutorial1.html</a> </p>
 <p>w5</p>
-<p>欲開啟靜態網頁時，誤將config資料夾中的檔案刪除，導致要開啟靜態網頁時無法順利操作，後來將組別資料夾刪除，重新git clone及創建新的token，靜態網站已能順利啟動。</p><h1>Note</h1>
+<p>欲開啟靜態網頁時，誤將config資料夾中的檔案刪除，導致要開啟靜態網頁時無法順利操作，後來將組別資料夾刪除，重新git clone及創建新的token，靜態網站已能順利啟動。</p>
+<h1>Note</h1>
 <h2>token</h2>
 <p>Personal access tokens</p>
 <p>開啟github帳號點選右上頭像並點選Settings<br/>點選Developer settings<br/>點選Personal access tokens<br/>點選Generate new token(classic)<br/>Note 名稱(任意)<br/>勾選repo(第一個)<br/>點選最下面的Generate token<br/>複製產生出來的token<br/>開啟可攜系統<br/>開啟欲設Personal access tokens的資料夾<br/>點開.git(要開隱藏項目才看的到)<br/>將裡面的congif拉到SciTE(灰色圓球)<br/>將複製的字串貼在github.com的前面再加上@並存檔<span style="background-color: #ffff00;">(CTRL+S)</span><br/>Personal access tokens就設定完成</p>
@@ -22,7 +23,8 @@
 <p>資料網址:<a href="https://teams.microsoft.com/_#/school/ClassNotes/w5?threadId=19:a398eb1b5dc841b690f68a4e4dcefdb7@thread.tacv2&amp;ctx=channel">cad2022</a></p>
 <p>考試帳號創建</p>
 <p>1. (登入 stud.cycu.org)利用 @nfu 電子郵箱收到的帳號與密碼, 登入 stud.cycu.org:  在命令列視窗, 以 ssh cad學號@stud.cycu.org , 輸入對應密後, 可以登入系統<br/><br/>2. 請到 excel 檔案 查詢 stud.cycu.org 中與帳號對應的近端 (給 127.0.0.1 使用) 與遠端 (給 stud.cycu.org) 埠號<br/><br/>3. (透過 sftp 建立近端目錄與 stud.cycu.org 帳號下的對應)  開啟另一個命令列, 執行 sftp 帳號@stud.cycu.org   輸入對應密碼, 即可建立近端目錄與遠端系統目錄間的對應.<br/><br/>4. 與在近端(Windows)利用  SSH 建立 public/private keys 流程相同, 必須在 Linux (Ubuntu) 利用 ssh-keygen 建立 keys. 所產生的 id_rsa 為 private key, 而 id_rsa.pub 為 public key, 都位於 .ssh 目錄下.<br/><br/>5. 利用 sftp  進入 stud.cycu.org 後, cd 到 .ssh, 以 get id_rsa.pub 將 public key 取至  Windows 後, 送到 Github -&gt; Settings -&gt; SSH and GPG 設定區, 透過 new key 登錄公鑰.<br/><br/>6. 接下來要下載  config 設定檔案,  以 sftp 放入 stud.cycu.org 主機的 .ssh 目錄中.<br/><br/>7. 上面的  config  主要設定 SSH 協定對  github.com  連線時的代理主機, 但取下  cmsimde  子模組使用的是  https,  因此執行下列  git clone 時將會同時用到   SSH  與 https  協定,  因此除了  .ssh  目錄下要有  config  設定檔案外, 也必須同時在  .gitconfig  檔案中設定  http.proxy,  也就是以 git config --global http.proxy http://p42.cycu.org:3128 設定供 https 連線使用的代理主機, 並且以  git config --global  user.name 以及  git config --global  user.email 設定提交用的身分註記.<br/><br/>8. 在 stud.cycu.org 中, 以 git clone --recurse-submodules  git@github.com:mdecad2022/site-個人github帳號.git   取下個人倉儲.<br/><br/>9. 假如先前使用  git clone 並沒有取下  cmsimde 子模組內容, 只要在設定 https 代理主機後, 進入倉儲根目錄執行  git submodule update --init  --recursive  即可取下子模組內容.<br/><br/>10. 接著下載 server.py, 在 Windows 編輯 server.py, 將個人分配到的 9xxxx 埠號填入後存檔, 以 sftp 放入上列取下的倉儲根目錄.<br/><br/>11. 在 stud.cycu.org 系統中, 進入倉儲 (site-github帳號) 後, 執行 python3 server.py, 就可啟用動態網站.<br/><br/>12. 設定完成後, 各學員將會有一個廣域網路上的動態網站 (取代 Replit 上的動態網站), https://stud.cycu.org:8xxxx   看到個人的動態網站.<br/><br/>13. 動態網站改版後, 轉為靜態, 必須透過 source acp 以 SSH 將改版內容送回 github. (必須利用 chmod u+x acp 將 acp  檔案屬性改為對  user 可以 execute (也就是 x 屬性).<br/><br/>14. 執行 source acp  "提交字串" 之前必須要 git config  --global user.name, git config  --global user.email, git config  --global http.proxy<br/><br/>15. 上述採用指令模式對  server sftp 也可以利用  Filezilla portable, 以圖形介面完成. 而 ssh 也可以透過  putty.exe 執行遠端登入.</p>
-<p></p><h1>Tutorial1</h1>
+<p></p>
+<h1>Tutorial1</h1>
 <p>兩球體碰撞</p>
 <script>
 var 1 = {
